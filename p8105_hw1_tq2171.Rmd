@@ -98,3 +98,20 @@ numeric_factor <- as.numeric(df$factor_vector)
 
 The `as.numeric()` function in R successfully converts logical vectors and factor vectors to numeric form, but it fails to convert character vectors because of how these data types are internally represented. Logical vectors consist of `TRUE` and `FALSE` values, which have straightforward numeric equivalents: `TRUE` is converted to `1` and `FALSE` to `0`. This simple binary nature allows `as.numeric()` to perform a direct conversion. Similarly, factor vectors are stored as integers under the hood, with each factor level corresponding to a unique integer code. When `as.numeric()` is applied to a factor, it retrieves these underlying integer codes, making the conversion to numeric possible. In contrast, character vectors consist of text strings, which have no inherent numeric representation. R cannot assign a meaningful number to arbitrary text like "apple" or "dog," so `as.numeric()` fails to convert characters and instead returns `NA` with a warning. This difference highlights why `as.numeric()` works for logical and factor vectors but not for character vectors.
 
+```{r}
+# Calculate the mean of logic vector again
+mean_numeric_logical <- mean(numeric_logical)  # This will work, calculating the proportion of TRUE values
+
+# Calculate the mean of character vector again
+mean_numeric_character <- mean(numeric_character, na.rm = TRUE)  # This will return NA or an error due to NA values
+
+# Calculate the mean of factor vector again
+mean_numeric_factor <- mean(numeric_factor)  # This will work, but the result may not be meaningful
+
+# Print the results
+print(mean(df %>% pull(random_sample))) 
+print(mean_numeric_logical)    # Proportion of TRUE values
+print(mean_numeric_character)  # Will be NA
+print(mean_numeric_factor)     # Mean of factor levels' integer codes
+```
+```
