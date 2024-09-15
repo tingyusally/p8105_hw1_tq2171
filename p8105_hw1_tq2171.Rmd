@@ -18,3 +18,20 @@ str(penguins)
 mean(penguins$flipper_length_mm, na.rm = TRUE)
 ```
 This is a dataset called "penguins", it contains 344 observations and 8 variables, which means there are 344 rows and 8 columns. Name and the type of the 8 variables are the following: species (factor), island (factor), bill_length_mm (numeric), bill_depth_mm (numeric), flipper_length_mm (integer), body_mass_g (integer), sex (factor) and the year (integer). Due to the variable flipper_length_mm contains missing value, so when we calculate the mean of flipper_length_mm, we need to drop the missing value, whcih use the na.rm=TRUE, and after that, we can know the mean of flipper length is 200.9152.
+
+## make the scatterplot
+```{r}
+# Load the ggplot2 library
+library(ggplot2)
+
+# Create a scatterplot
+scatter_plot<-
+  ggplot(data = penguins, aes(x = bill_length_mm, y = flipper_length_mm, colour = species)) +
+  geom_point() +
+  labs(title = "Scatterplot of Bill Length vs Flipper Length", x = "bill_length_mm", y = "flipper_length_mm") +
+  theme_minimal()
+
+# Save the plot to the project directory
+ggsave("scatterplot.png", plot = scatter_plot, width = 6, height = 4, dpi = 300)
+```
+
