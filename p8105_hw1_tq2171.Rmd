@@ -8,13 +8,23 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Homework 1
 
 ## load the dataset
 ```{r}
+# Load the 'penguins' dataset from the 'palmerpenguins' package
 data("penguins", package = "palmerpenguins")
+
+# Get the number of rows in the 'penguins' dataset
 nrow(penguins)
+
+# Get the number of columns in the 'penguins' dataset
 ncol(penguins)
+
+# Display the structure of the 'penguins' dataset, including data types and first few entries
 str(penguins)
+
+# Calculate the mean of the 'flipper_length_mm' column, excluding any missing values (NA)
 mean(penguins$flipper_length_mm, na.rm = TRUE)
 ```
 This is a dataset called "penguins", it contains 344 observations and 8 variables, which means there are 344 rows and 8 columns. Name and the type of the 8 variables are the following: species (factor), island (factor), bill_length_mm (numeric), bill_depth_mm (numeric), flipper_length_mm (integer), body_mass_g (integer), sex (factor) and the year (integer). Due to the variable flipper_length_mm contains missing value, so when we calculate the mean of flipper_length_mm, we need to drop the missing value, whcih use the na.rm=TRUE, and after that, we can know the mean of flipper length is 200.9152.
