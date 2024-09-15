@@ -72,15 +72,15 @@ print(df)
 
 ```{r}
 # Mean of the numeric random sample
-mean(df$random_sample) # This will work
+mean(df %>% pull(random_sample)) # This will work
 
 # Mean of the logical vector
-mean(df$logical_vector) # This will work, TRUE is 1, FALSE is 0
+mean(df %>% pull(logical_vector)) # This will work (logical values are coerced to numeric: TRUE = 1, FALSE = 0)
 
-# Attempt to mean of the character vector
-mean(df$character_vector) # This will not work - Error
+# Mean of the character vector
+mean(df %>% pull(character_vector)) # This will not work (character cannot be coerced to numeric)
 
-# Attempt to mean of the factor vector
-mean(df$factor_vector) # This will not work - Error
+# Mean of the factor vector
+mean(df %>% pull(factor_vector)) # This will not work (factors are internally stored as integers but have a level attribute)
 ```
 
