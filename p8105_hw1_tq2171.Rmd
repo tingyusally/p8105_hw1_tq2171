@@ -15,6 +15,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 # Load the 'penguins' dataset from the 'palmerpenguins' package
 data("penguins", package = "palmerpenguins")
+
+# Get the number of rows in the 'penguins' dataset
+nrow(penguins)
+
+# Get the number of columns in the 'penguins' dataset
+ncol(penguins)
 ```
 
 
