@@ -52,16 +52,4 @@ ggsave("scatterplot.png", plot = scatter_plot, width = 6, height = 4, dpi = 300)
 ```{r}
 # Load the tidyverse package
 library(tidyverse)
-
-# Create the data frame
-set.seed(123) # Setting a seed for reproducibility
-df <- data.frame(
-  random_sample = rnorm(10), # Random sample from standard Normal distribution
-  logical_vector = rnorm(10) > 0, # Logical vector indicating if sample > 0
-  character_vector = sample(letters[1:10], 10, replace = TRUE), # Character vector of length 10
-  factor_vector = factor(sample(c("Level1", "Level2", "Level3"), 10, replace = TRUE)) # Factor vector with 3 levels
-)
-
-# display the data frame
-print(df)
 ```
