@@ -1,0 +1,20 @@
+---
+title: "p8105_hw1_tq2171"
+author: "Tingyu Qian"
+date: "2024-09-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## load the dataset
+```{r}
+data("penguins", package = "palmerpenguins")
+nrow(penguins)
+ncol(penguins)
+str(penguins)
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+```
+This is a dataset called "penguins", it contains 344 observations and 8 variables, which means there are 344 rows and 8 columns. Name and the type of the 8 variables are the following: species (factor), island (factor), bill_length_mm (numeric), bill_depth_mm (numeric), flipper_length_mm (integer), body_mass_g (integer), sex (factor) and the year (integer). Due to the variable flipper_length_mm contains missing value, so when we calculate the mean of flipper_length_mm, we need to drop the missing value, whcih use the na.rm=TRUE, and after that, we can know the mean of flipper length is 200.9152.
