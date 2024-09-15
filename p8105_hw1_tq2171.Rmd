@@ -58,7 +58,7 @@ set.seed(123) # Setting a seed for reproducibility
 df <- data.frame(
   random_sample = rnorm(10), # Random sample from standard Normal distribution
   logical_vector = rnorm(10) > 0, # Logical vector indicating if sample > 0
+  character_vector = sample(letters[1:10], 10, replace = TRUE), # Character vector of length 10
 )
 ```
-
 
