@@ -84,3 +84,15 @@ mean(df %>% pull(character_vector)) # This will not work (character cannot be co
 mean(df %>% pull(factor_vector)) # This will not work (factors are internally stored as integers but have a level attribute)
 ```
 The mean calculation works for the numeric random sample and the logical vector but fails for the character and factor vectors due to how R handles different data types. The mean of the numeric random sample works because the values are inherently numeric, allowing for straightforward mathematical operations. Similarly, the mean of the logical vector works because R automatically coerces logical values (`TRUE` and `FALSE`) into numeric values (`1` and `0`), respectively, making it possible to compute the mean as the proportion of `TRUE` values. However, the mean calculation does not work for the character vector because characters are text data that cannot be directly converted into numbers; R does not know how to interpret or average text strings. For the factor vector, while it is stored internally as integers, it represents categorical data with associated levels. The levels have meaning as categories, not as numeric values, so taking their mean does not make sense and will not yield a meaningful result.
+
+```{r}
+# Coerce logical vector to numeric
+numeric_logical <- as.numeric(df$logical_vector)
+
+# Coerce character vector to numeric
+numeric_character <- as.numeric(df$character_vector)
+
+# Coerce factor vector to numeric
+numeric_factor <- as.numeric(df$factor_vector)
+```
+
