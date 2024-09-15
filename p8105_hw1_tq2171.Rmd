@@ -48,4 +48,10 @@ scatter_plot<-
 ggsave("scatterplot.png", plot = scatter_plot, width = 6, height = 4, dpi = 300)
 ```
 
+# Homework 2
+```{r}
+# Load the tidyverse package
+library(tidyverse)
+```
+
 
