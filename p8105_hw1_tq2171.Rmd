@@ -58,4 +58,14 @@ set.seed(123)
 
 # Generate a random sample from a standard normal distribution
 random_sample <- rnorm(10)
+
+# Create the data frame with the corrected logical vector
+df <- data.frame(
+  random_sample = random_sample, # Random sample from standard Normal distribution
+  logical_vector = random_sample > 0, # Logical vector indicating if each element of the sample > 0
+  character_vector = sample(letters[1:10], 10, replace = TRUE), # Character vector of length 10
+  factor_vector = factor(sample(c("Level1", "Level2", "Level3"), 10, replace = TRUE)) # Factor vector with 3 levels
+)
+
+print(df)
 ```
