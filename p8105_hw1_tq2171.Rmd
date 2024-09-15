@@ -1,0 +1,20 @@
+---
+title: "p8105_hw1_tq2171"
+author: "Tingyu Qian"
+date: "2024-09-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Homework 1
+
+## load the dataset
+```{r}
+# Load the 'penguins' dataset from the 'palmerpenguins' package
+data("penguins", package = "palmerpenguins")
+```
+
+
