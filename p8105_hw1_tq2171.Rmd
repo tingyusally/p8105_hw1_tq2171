@@ -61,4 +61,7 @@ df <- data.frame(
   character_vector = sample(letters[1:10], 10, replace = TRUE), # Character vector of length 10
   factor_vector = factor(sample(c("Level1", "Level2", "Level3"), 10, replace = TRUE)) # Factor vector with 3 levels
 )
+
+# display the data frame
+print(df)
 ```
