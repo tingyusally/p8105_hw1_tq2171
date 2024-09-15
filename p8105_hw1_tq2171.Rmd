@@ -69,3 +69,18 @@ df <- data.frame(
 
 print(df)
 ```
+
+```{r}
+# Mean of the numeric random sample
+mean(df$random_sample) # This will work
+
+# Mean of the logical vector
+mean(df$logical_vector) # This will work, TRUE is 1, FALSE is 0
+
+# Attempt to mean of the character vector
+mean(df$character_vector) # This will not work - Error
+
+# Attempt to mean of the factor vector
+mean(df$factor_vector) # This will not work - Error
+```
+
