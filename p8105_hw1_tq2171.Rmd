@@ -57,6 +57,7 @@ library(tidyverse)
 set.seed(123) # Setting a seed for reproducibility
 df <- data.frame(
   random_sample = rnorm(10), # Random sample from standard Normal distribution
+  logical_vector = rnorm(10) > 0, # Logical vector indicating if sample > 0
 )
 ```
 
