@@ -52,4 +52,10 @@ ggsave("scatterplot.png", plot = scatter_plot, width = 6, height = 4, dpi = 300)
 ```{r}
 # Load the tidyverse package
 library(tidyverse)
+
+# Set a seed for reproducibility
+set.seed(123)
+
+# Generate a random sample from a standard normal distribution
+random_sample <- rnorm(10)
 ```
