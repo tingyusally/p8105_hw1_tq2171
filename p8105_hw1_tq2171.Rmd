@@ -2,7 +2,7 @@
 title: "p8105_hw1_tq2171"
 author: "Tingyu Qian"
 date: "2024-09-15"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
