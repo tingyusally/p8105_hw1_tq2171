@@ -15,21 +15,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 # Load the 'penguins' dataset from the 'palmerpenguins' package
 data("penguins", package = "palmerpenguins")
-
-# Get the number of rows in the 'penguins' dataset
-nrow(penguins)
-
-# Get the number of columns in the 'penguins' dataset
-ncol(penguins)
-
-# Display the structure of the 'penguins' dataset, including data types and first few entries
-str(penguins)
-
-# Calculate the mean of the 'flipper_length_mm' column, excluding any missing values (NA)
-mean(penguins$flipper_length_mm, na.rm = TRUE)
 ```
 
-This is a dataset called "penguins", it contains 344 observations and 8 variables, which means there are 344 rows and 8 columns. Name and the type of the 8 variables are the following: species (factor), island (factor), bill_length_mm (numeric), bill_depth_mm (numeric), flipper_length_mm (integer), body_mass_g (integer), sex (factor) and the year (integer). Due to the variable flipper_length_mm contains missing value, so when we calculate the mean of flipper_length_mm, we need to drop the missing value, whcih use the na.rm=TRUE, and after that, we can know the mean of flipper length is 200.9152.
+This is a dataset called "penguins", it contains 344 observations and 8 variables, which means there are `r nrow(penguins)` rows and `r ncol(penguins)` columns. Name of the 8 variables are the following: `r names(penguins)`. The type of each variable are the following: species is `r class(penguins$species)`,  island is `r class(penguins$island)`, bill_length_mm is `r class(penguins$bill_length_mm)`, bill_depth_mm is `r class(penguins$bill_depth_mm)`, flipper_length_mm is `r class(penguins$flipper_length_mm)`, body_mass_g is `r class(penguins$body_mass_g)`, sex is `r class(penguins$sex)`, year is `r class(penguins$year)`. There are three variables that the type is factor, which are species, island and the sex. For the variable species, it contains 3 levels "`r unique(penguins$species)`", for the variable island, it contains 3 levels "`r unique(penguins$island)`", and for the variable sex, it contains 2 factors "`r unique(na.omit(penguins$sex))`". For the rest of the 5 variables, they are either numeric or integer. Due to the variable flipper_length_mm contains missing value, so when we calculate the mean of flipper_length_mm, we need to drop the missing value, whcih use the na.rm=TRUE, and after that, we can know the mean of flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)`.
 
 
 ## make the scatterplot
@@ -43,7 +31,7 @@ scatter_plot<-
   geom_point() +
   labs(title = "Scatterplot of Bill Length vs Flipper Length", x = "bill_length_mm", y = "flipper_length_mm") +
   theme_minimal()
-
+scatter_plot
 # Save the plot to the project directory
 ggsave("scatterplot.png", plot = scatter_plot, width = 6, height = 4, dpi = 300)
 ```
